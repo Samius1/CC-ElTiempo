@@ -1,0 +1,7 @@
+FROM python:3.8-slim-buster
+
+COPY . ./
+
+RUN apt-get update && pip install --upgrade && pip install --requirement requirements.txt
+
+CMD gunicorn --workers=4 -b 0.0.0.0:5002 API2_OpenWeather:app
