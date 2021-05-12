@@ -17,7 +17,7 @@ def arima(horas):
    if (horas <= 0):
       return flask.Response("Número incorrecto. Introduzca un número mayor que 0.", status=400)
       
-   datos = p.read_csv('~/Desktop/SPA_Airflow/mezcla.csv', header=0)
+   datos = p.read_csv('mezcla.csv', header=0)
    
    modeloTemperatura = ari.auto_arima(datos['TEMP'].dropna(), start_p=1, start_q=1, test='adf', max_p=3, max_q=3, m=1, d=None, seasonal=False, start_P=0, D=0, trace=True, error_action='ignore', suppress_warnings=True, stepwise=True)      
       
