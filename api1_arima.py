@@ -36,5 +36,3 @@ def arima(horas):
       return flask.Response("No se ha encontrado información.", status=400)
    else:
       return flask.Response(json.dumps(resultadoArima), mimetype='application/json', status=200)
-    
-app.run()

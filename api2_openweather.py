@@ -35,5 +35,3 @@ def OpenWeather(horas):
          resultadoOpenWeather.append( { "hour": datetime.utcfromtimestamp(informacionHoras[x]['dt']).strftime('%H:00'), "temp": round(informacionHoras[x]['temp'],2), "hum": round(informacionHoras[x]['humidity'],2) })
          
       return flask.Response(json.dumps(resultadoOpenWeather), mimetype='application/json', status=200)
-    
-app.run()
