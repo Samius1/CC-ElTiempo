@@ -38,9 +38,9 @@ def arima(horas):
       temperaturaZip.close()
       
    if (not os.path.exists('humedad.pickle') or not os.path.exists('temperatura.pickle')):      
-      with ZipFile('hum.zip', 'r') as zipObj:
+      with z.ZipFile('hum.zip', 'r') as zipObj:
          zipObj.extractall()   
-      with ZipFile('temp.zip', 'r') as zipObj:
+      with z.ZipFile('temp.zip', 'r') as zipObj:
          zipObj.extractall()   
       
    ficheroHumedad = open('humedad.pickle', 'rb')
