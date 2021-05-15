@@ -1,5 +1,6 @@
 Flask
 gunicorn
 pmdarima
+pymongo
 requests
 statsmodels
