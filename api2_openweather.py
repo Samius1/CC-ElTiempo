@@ -12,8 +12,8 @@ def home():
 
 @app.route('/v2/<int:horas>', methods=['GET'])
 def OpenWeather(horas):
-   if (horas <= 0):
-      return flask.Response("Número incorrecto. Introduzca un número mayor que 0.", status=400)
+   if (horas <= 0 or horas > 72):
+      return flask.Response("Número incorrecto. Introduzca un número mayor que 0 y menor que 73.", status=400)
       
    apiURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=37.733795&lon=-122.446747&exclude=current,minutely,daily,alerts&appid=068239bf400481fd239c99c359058e0e'
    
